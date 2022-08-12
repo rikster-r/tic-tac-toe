@@ -53,6 +53,8 @@ button {
     padding: 1rem;
     width: 10rem;
     border-radius: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 button:hover,
@@ -66,13 +68,21 @@ button:hover,
     place-items: center;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     background-color: var(--main-color);
     width: 450px;
     height: 450px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 1px;
 }
 
 .board div {
@@ -80,4 +90,33 @@ button:hover,
     font-size: 100px;
     border: 1px solid #000;
     user-select: none;
+}
+
+.modal {
+    border-color: var(--hover-background-color);
+    padding: 2rem;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: fit-content;
+    gap: 2rem;
+}
+
+.form-element {
+    display: grid;
+    gap: 10px;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+
+    height: 2rem;
+    width: 50ch;
+    padding: 0.5rem;
+}
+
+input:focus {
+    outline-color: blue
 }

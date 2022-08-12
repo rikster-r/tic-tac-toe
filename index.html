@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <h1 class="center">Tic Tac Toe</h1>
+    <h2 class="center" data-message>It's player 1's turn</h2>
     <main class="center">
         <div class="board">
             <div data-cell data-index="1"></div>
@@ -24,8 +25,27 @@
             <div data-cell data-index="8"></div>
             <div data-cell data-index="9"></div>
         </div>
-        <button type="button" data-reset-game>Restart</button>
+        <div class="btns-container">
+            <button type="button" data-reset-game>Restart</button>
+            <button type="button" data-change-names>Change Names</button>
+        </div>
     </main>
+    <dialog class="modal" data-modal>
+        <form class="form" method="dialog" data-form>
+            <div class="form-element">
+                <label for="player-1-name">Player 1's new name</label>
+                <input type="text" name="player-1-name" id="player-1-name">
+            </div>
+            <div class="form-element">
+                <label for="player-2-name">Player 2's new name</label>
+                <input type="text" name="player-2-name" id="player-2-name">
+            </div>
+            <div class="flex-center">
+                <button type="submit">Submit</button>
+                <button type="button" data-cancel>Cancel</button>
+            </div>
+        </form>
+    </dialog>
     <footer class="center">
         <a href="https://github.com/rikster-r/tic-tac-toe">&copy; 2022 rikster-r</a>
     </footer>
