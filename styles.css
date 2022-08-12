@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --main-background-color: #eee;
+    --hover-background-color: #ccc;
+    --font-family: 'Quicksand', sans-serif;
+}
+
 * {
     box-sizing: border-box;
 }
 
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family);
     font-size: 1rem;
 
     min-height: 100vh;
@@ -12,21 +21,17 @@ body {
     gap: 2rem;
 }
 
+main {
+    flex-grow: 1; /*from body*/
+    gap: 1rem; /*from center class*/
+}
+
 body, h1{
     margin: 0;
 }
 
-h1, main, footer {
-    display: grid;
-    place-items: center;
-}
-
-main {
-    flex-grow: 1;
-}
-
 h1, footer {
-    padding: 1.5rem !important;
+    padding: 1.5rem;
 }
 
 a {
@@ -39,12 +44,40 @@ a:focus {
     text-decoration: underline;
 }
 
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--main-background-color);
+    
+    outline:none;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+button:hover,
+.board div:hover {
+    cursor: pointer;
+    background-color: var(--hover-background-color);
+}
+
+.center {
+    display:grid;
+    place-items: center;
+}
+
 .board {
-    background-color: #eee;
-    width: 70vh;
-    height: 70vh;
+    background-color: var(--main-color);
+    width: 450px;
+    height: 450px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+}
+
+.board div {
+    text-align: center;
+    font-size: 100px;
+    border: 1px solid #000;
+    user-select: none;
 }
